@@ -61,7 +61,7 @@ resource "aws_instance" "arm64" {
   provisioner "remote-exec" {
     inline = [
       "wget https://releases.hashicorp.com/terraform/${var.terraform_version}/terraform_${var.terraform_version}_linux_arm64.zip",
-      "sudo apt-get install unzip -y -q",
+      "sudo apt-get install unzip build-essential awscli -y -q",
       "unzip terraform_${var.terraform_version}_linux_arm64.zip",
       "unzip terraform_0.14.0-test1_linux_arm64.zip",
       "sudo mv terraform /usr/local/bin",
