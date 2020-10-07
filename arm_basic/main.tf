@@ -1,16 +1,3 @@
-# terraform {
-#   backend "remote" {
-#     organization = "team-core"
-#     workspaces {
-#       name = "arm_repro"
-#     }
-#   }
-# }
-
-provider "aws" {
-  region  = "us-east-2"
-  profile = var.aws_profile
-}
 
 resource "aws_key_pair" "arm64_key" {
   key_name   = "arm64_key"
