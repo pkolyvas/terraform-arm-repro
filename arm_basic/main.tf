@@ -29,6 +29,7 @@ resource "aws_security_group" "allow_ssh" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
+    #Replace with your IP for added security if the instance will be long-running
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
@@ -44,8 +45,9 @@ resource "aws_security_group" "allow_ssh" {
 }
 
 resource "aws_instance" "arm64" {
-
-  ami                         = "ami-0327b24ad9181634e"
+  # Canonical ami for 20.04 / ARM64
+  ami = "ami-0327b24ad9181634e"
+  # Free tier instance of T4
   instance_type               = "t4g.micro"
   subnet_id                   = module.vpc.public_subnets.0
   associate_public_ip_address = true
