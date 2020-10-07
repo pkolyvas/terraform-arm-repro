@@ -66,9 +66,10 @@ resource "aws_instance" "arm64" {
       "unzip terraform_0.14.0-test1_linux_arm64.zip",
       "sudo mv terraform /usr/local/bin",
       "terraform -v"
-
     ]
-    on_failure = continue
+
+    # Present for debugging - uncomment if needed
+    #on_failure = continue
 
     connection {
       type = "ssh"
