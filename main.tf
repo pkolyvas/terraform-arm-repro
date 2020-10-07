@@ -8,7 +8,7 @@ module "arm64" {
   # Specify the Terraform version you'd like to test
   terraform_version = "0.14.0"
   # Specify the location of the SSH public key you'd like to use
-  my_ssh_key  = "/Users/pkolyvas/.ssh/hashi_rsa_public"
+  my_ssh_key  = "/somepath"
   aws_profile = var.aws_profile
 }
 
