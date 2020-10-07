@@ -7,7 +7,7 @@ resource "aws_key_pair" "arm64_key" {
 module "vpc" {
   source = "github.com/pkolyvas/terraform-aws-vpc.git?ref=pkolyvas-0.14"
 
-  name = "conference-vpc"
+  name = "arm64-vpc"
   cidr = "10.230.0.0/16"
 
   azs             = ["us-east-2c", "us-east-2b"]
@@ -68,6 +68,7 @@ resource "aws_instance" "arm64" {
       "terraform -v"
 
     ]
+    on_failure = continue
 
     connection {
       type = "ssh"
