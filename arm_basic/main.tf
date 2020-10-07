@@ -1,3 +1,6 @@
+data "local_file" "my_ssh_key" {
+  filename = var.my_ssh_key
+}
 
 resource "aws_key_pair" "arm64_key" {
   key_name   = "arm64_key"
@@ -39,11 +42,6 @@ resource "aws_security_group" "allow_ssh" {
     Name = "allow_ssh"
   }
 }
-
-data "local_file" "my_ssh_key" {
-  filename = var.my_ssh_key
-}
-
 
 resource "aws_instance" "arm64" {
 

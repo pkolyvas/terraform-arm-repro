@@ -14,5 +14,5 @@ module "arm64" {
 
 output "instance_ip" {
   value       = module.arm64.instance_ip
-  description = "SSH into the above address, with username: ubuntu"
+  description = "SSH into the above address with your matching SSH private key and with username: ubuntu"
 }
