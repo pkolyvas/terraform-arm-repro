@@ -92,6 +92,6 @@ resource "aws_instance" "arm64" {
 
 output "instance_ip" {
   value       = aws_instance.arm64.public_ip
-  description = "SSH into the above address"
+  description = "SSH into the above address, with username: ubuntu"
 }
 
